@@ -1,16 +1,21 @@
-<html>
-<head>
+@extends("template.app")
 
-</head>
-<body>
-    @foreach($pessoas as $pessoa)
-        Nome: {{$pessoa->nome}} <br>
-        Telefone:
-        @foreach($pessoa->telefone as $telefone)
-            {{$telefone ->telefone}}
+@section("content")
+
+    <div>
+        @foreach($pessoas as $pessoa)
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{$pessoa ->nome}}</div>
+                    <div class="panel-body">
+                        @foreach($pessoa->telefone as $telefone)
+                           <p><strong> Telefone:</strong> ({{$telefone->ddd}}) {{$telefone ->telefone}}</p>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         @endforeach
-        <br><br>
-    @endforeach
 
-</body>
-</html>
+    </div>
+
+@endsection
