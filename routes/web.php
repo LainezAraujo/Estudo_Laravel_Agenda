@@ -14,11 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix'=>'teste'],function (){
-    Route::get('/',function() {
-        return view('teste');
-    });
+
+
+Route::group(['prefix'=>'pessoas'],function (){
+    Route::get('/','PessoasController@index');
 });
 
-//Route::get('/teste',function (){
- //   return view('teste');//});
