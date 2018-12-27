@@ -15,6 +15,9 @@ Route::group(["prefix" =>"pessoas"], function(){
     Route::get("/","PessoasController@index");
     Route::get("/novo","PessoasController@novoView");
     Route::post("/store","PessoasController@store");
+    //receber atributos na rota
+    Route::get("/{id}/editar","PessoasController@editarView");
+    Route::post("/update","PessoasController@update");
 });
 
 
