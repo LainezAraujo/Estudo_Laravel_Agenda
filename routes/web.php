@@ -21,6 +21,7 @@ Route::group(["prefix" =>"pessoas"], function(){
     Route::get("/{id}/excluir","PessoasController@excluirView");
     Route::get("/{id}/destroy","PessoasController@destroy");
     Route::post("/update","PessoasController@update");
+    Route::post("/busca","PessoasController@busca");
     Route::get("/{letra}","PessoasController@index");
 });
 
